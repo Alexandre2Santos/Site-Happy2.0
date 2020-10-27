@@ -13,22 +13,40 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // create icon
 const icon = L.icon({
-    iconUrl: "./public/images/map-marker.svg",
+    iconUrl: "/images/map-marker.svg",
     iconSize: [58,68],
     iconAnchor: [29, 68],
     popupAnchor: [170,2]
 })
-//create and add popup overlay
+function addMarker({id, name, lat, lng}) {
+
+    //create popup overlay
 const popup = L.popup({
     closeButton: false,
     className: 'map-popup',
     minwidth: 240,
     minHeight: 240
-}).setContent('Lar das meninas <a href="orphanage.html?id=1" class="choose-orphanage"> <img src="./public/images/arrow-white.svg > </a>')
+}).setContent(`${name} <a href="/orphanage?id=${id}"> <img src="/images/arrow-white.svg > </a>`)
 
 
 // creat and add marker
-L.marker([-9.6210271,-35.7200828], { icon })
+L.marker([lat, lng], { icon })
 .addTo(map)
 .bindPopup(popup)
+
+
+}
+
+const orphanagesSpan= document.querySelectorAll('.orphanages span')
+orphanagesSpan.forEach(span =>{
+const orphanage = {
+id: span.dataset.id,
+name: span.dataset.name,
+lat: span.dataset.lat,
+lng: span.dataset.lng
+
+}
+addMarker(orphanage)
+})
+
     
