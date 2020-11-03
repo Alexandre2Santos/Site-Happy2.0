@@ -3,7 +3,7 @@ const Database = require('sqlite-async');
 function execute(db) {
     
     return db.exec(`
-        CREATE TABLE IF NOT EXISTS orphanage (
+        CREATE TABLE IF NOT EXISTS orphanages (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         lat TEXT,
         lng TEXT,

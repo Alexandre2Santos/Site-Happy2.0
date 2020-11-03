@@ -1,5 +1,4 @@
 const Database = require('./db');
-const db = require('./db');
 const saveOrphanage = require('./saveOrphanage');
 
 Database.then(async db => {
@@ -7,28 +6,30 @@ Database.then(async db => {
 
 //inserir dados na tabela
 await saveOrphanage(db, {
-        
         lat: "-9.6210271",
-        lng: "-35.7068828",
-        name: "Lar de meninos",
+         lng: "-35.7500828",
+        name: "Lar dos Meninos",
         about:"Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vulnerabilidade social.",
-        whatsapp:"999998999",
-        images: 
-        ["https://www.des1gnon.com/wp-content/uploads/2020/03/Pexels-Banco-de-Imagens-gratis-Des1gnON.jpg"
+        whatsapp: "82999999999",
+        images: [
+        "https://images.unsplash.com/photo-1517502547957-d2916b52c46d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
+
+        "https://images.unsplash.com/photo-1553323855-cc1abf1930d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
     ].toString(),
-
-    instructions: "venha aqui testar o site",
+    instructions: "Sita-se a vontade e traga amor e paciência",
     opening_hours:"bug e mais bugs",
-    opening_on_weekends: "1"
-
+    opening_on_weekends: "0"
     
-    })
-    
-//consultar dados na tabela
-const selectedOrphanage = await db.all("SELECT * FROM orphanage")
-console.log(selectedOrphanage)
+})
+//consultar dados da tabela.
+ const selectedOrphanages = await db.all("SELECT * FROM //orphanages")
+ console.log(selectedOrphanages)
 
- //selecionando apenas 1 orfanato
- const orphanages = await db.all('SELECT * FROM orphanages WHERE id = "2"')
- console.log(orphanages)
+ //consultar apenas 1 orfanato
+ const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "2"')
+ console.log(orphanage)
+ //deletar dados da tabela
+ 
+ //console.log(await db.run("DELETE FROM orphanages"))
+ 
 })

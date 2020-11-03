@@ -1,6 +1,6 @@
 function saveOrphanage(db, orphanage) {
   return db.run(`
-    INSERT INTO orphanage (
+    INSERT INTO orphanages (
         lat, 
         lng,
         name,
@@ -19,7 +19,7 @@ function saveOrphanage(db, orphanage) {
         "${orphanage.images}",
         "${orphanage.instructions}",
         "${orphanage.opening_hours}",
-        "${orphanage.open_on_weekends}"
+        "${orphanage.opening_on_weekends}"
         );
     `);
 }
