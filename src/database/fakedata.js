@@ -10,8 +10,8 @@ module.exports = [
         "https://images.unsplash.com/photo-1553323855-cc1abf1930d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
     ],
     instructions: "Sita-se a vontade e traga amor e paciência",
-    opening_hours:"bug e mais bugs",
-    opening_on_weekends: "0"
+    opening_hours:"8H até 16H",
+    open_on_weekends: "0"
     },
     {
     id: 2,
@@ -22,7 +22,7 @@ module.exports = [
     images: ["https://images.unsplash.com/photo-1517502547957-d2916b52c46d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"
 ],
 instructions: "venha aqui testar o site",
-opening_hours:"bug e mais bugs",
-opening_on_weekends: "1"
+opening_hours:"8H até 18H",
+open_on_weekends: "1"
 }
 ]

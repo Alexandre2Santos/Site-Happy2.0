@@ -6,9 +6,12 @@ const options = {
     zoomControl: false
 
 }
+//get value fron html
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
 
 // create map
-const map = L.map('mapid', options).setView([-9.6210271,-35.7200828], 15);
+const map = L.map('mapid', options).setView([lat, lng], 15);
 
 // create and add titleLayer
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -31,7 +34,9 @@ const icon = L.icon({
 
 
 // creat and add marker
-L.marker([-9.6210271,-35.7200828], { icon })
+
+
+L.marker([lat,lng], { icon })
 .addTo(map)
 
 /* image gallery */
