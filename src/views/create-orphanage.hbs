@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adicionar um orfanato | Happy</title>
-  <link rel="icon" href=".public/images/logo-icon.png" />
+  <link rel="icon" href="/images/logo-icon.png" />
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -16,12 +16,12 @@
     crossorigin=""></script>
 
   <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css//animations.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
   <link rel="stylesheet" href="/css/sidebar.css" />
   <link rel="stylesheet" href="/css/map.css" />
   <link rel="stylesheet" href="/css/form.css" />
   <link rel="stylesheet" href="/css/buttons.css" />
-  <link rel="stylesheet" href="/css/page-create-orphanages.css" />
+  <link rel="stylesheet" href="/css/page-create-orphanage.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
@@ -39,7 +39,7 @@
     </aside>
 
     <main class="animate-apears with-sidebar">
-      <form action="" method="post">
+      <form action="save-orphanage" method="post" onsubmit="validate(event)">
         <fieldset>
           <legend>Dados</legend>
 
@@ -75,7 +75,10 @@
 
             <div class="images-upload" id="images">
               <div class="new-upload">
-                <input name="images" placeholder="Cole o link da foto aqui" required />
+                <input 
+                name="images" placeholder="Cole o link da foto aqui" required 
+                type=""
+                />
 
                 <span onclick="deleteField(event)">
                   <img src="/images/remove-file.svg" alt="Remover foto" />
